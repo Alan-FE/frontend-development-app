@@ -1,0 +1,107 @@
+@import '../../colors';
+
+%bottom-line {
+    text-decoration: none;
+            padding-bottom: 7px;
+            margin: 4px;
+            color: $text-light-color;
+            position: relative;
+
+            &::after {
+                content: '';
+                position: absolute;
+                height: 3px;
+                left: 0;
+                bottom: 0px;
+                background-color: $secondary-light-color;
+            }
+}
+
+#nav-bar {
+    background-color: $primary-dark-color;
+    padding: 1em;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 2;
+
+    ul, li {
+        display: inline-block;
+        list-style-type: none;
+        margin: .2em;
+
+        .active {
+            color: $secondary-light-color!important;
+            @extend %bottom-line;
+            &::after {       
+                width: 100%!important;
+            }
+        }
+
+        .links {
+            @extend %bottom-line;
+
+            &::after {       
+                width: 0;
+                transition: width linear .2s;
+            }
+
+            &:hover {
+                color: $secondary-light-color;
+                
+            }
+
+            &:hover::after {
+                width: 100%;
+            }
+
+        }
+
+        .icon-hamburger, .icon-close {
+            font-size: 2.4em;
+            color: $text-light-color;
+            position: absolute;
+            line-height: 1.4em;
+            top: 0;
+            right: 1.5em;
+        }
+
+        .list {
+            display: block;
+            padding: .3em;
+        }
+        
+        .hide {
+            display: none;
+        }
+
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+    #nav-bar {
+
+        ul {
+            padding-left: 10px;
+        }
+
+        li {
+            display: none;
+        }
+
+    }
+}
+
+@media screen and (min-width: 768px) {
+    #nav-bar {
+        .icon-hamburger, .icon-close {
+            display: none;
+        }
+    }
+    
+}
+
+@media screen and (max-width: 576px) {
+
+}

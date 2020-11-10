@@ -1,0 +1,122 @@
+@import '../../colors';
+
+#js-frameworks {
+   overflow: hidden;
+    h2 {
+        margin: 0px;
+        padding: .5em;
+        background-color: $secondary-light-color;
+    }
+
+    text-align: center;
+    width: 70%;
+    box-shadow: 4px 4px 7px black;
+    margin: .9em auto;
+    border-radius: 20px;
+
+    .popular-frameworks {
+        display: inline-block;
+        width: 30%;
+        padding: 0.5em;
+        margin: .3em;
+        text-align: left;
+        cursor: default;
+        transition: all .8s;
+        position: relative;
+
+        .behind {
+            text-decoration: none;
+            text-align: center;
+            background-color: $primary-dark-color;
+            color: $text-light-color;
+            visibility: hidden;
+            border-radius: 5px;
+            padding: .3em;
+            opacity: 0;
+            transition: all .8s;
+
+            &:hover {
+                background-color: $secondary-light-color;
+            }
+        }
+
+        img {
+            padding-top: .4em;
+            width: 30%;
+        }
+
+        h3 {
+            margin: .3em 0 0 0;
+        }
+
+        p {
+            margin: .3em 0;
+        }
+
+        &:hover {
+            transform: translateY(80px);
+            .behind {
+                visibility: visible;
+                opacity: 1;
+            }
+        }
+    }
+
+    .angular {
+        border-left: 1px solid black;
+        border-right: 1px solid black;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    #js-frameworks {
+        width: 90%;
+        .popular-frameworks {
+            width: 29%;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #js-frameworks {
+        width: 80%;
+        .popular-frameworks {
+            width: 40%;
+        }
+        .react {
+            &:hover {
+                transform: translateX(-80px);
+            }
+        }
+        .angular {
+            border-left: 1px solid black;
+            border-right: none;
+            &:hover {
+                transform: translateX(80px);
+            }
+        }
+        .vue {
+            width: 80%;
+            border-top: 1px solid black;
+            &:hover {
+                transform: translateY(80px);
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 576px) {
+    #js-frameworks {
+        width: 80%;
+        .popular-frameworks {
+            width: 80%;
+
+            &:hover {
+                transform: translateX(-60px);
+            }
+        }
+        .angular {
+            border: none;
+        }
+    }
+}

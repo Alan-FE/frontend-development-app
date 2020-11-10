@@ -1,0 +1,114 @@
+@import '../../colors';
+
+#css-frameworks {
+    background-color: $tertiary-light-color;
+    color: $text-light-color;
+    padding: 2em;
+    display: flex;
+    justify-content: center;
+    position: relative;
+
+    .detail {
+        width: 37%;
+        height: 30%;
+        background-color: $secondary-light-color;
+        position: absolute;
+        top: 40%;
+        left: 0;
+    }
+
+    .first-column, .second-column {
+        display: flex;
+        flex-wrap: wrap;
+        width: 20%;
+        text-align: center;
+        z-index: 1;
+
+        .cards {
+            background-color: $primary-dark-color;
+            margin: .8em;
+            padding: 1.8em;
+            box-shadow: 5px 5px 20px 0 rgba(0,0,0,0.4);
+
+            img {
+                width: 34%;
+            }
+        }
+
+        .hidden-div {
+           padding: 30px;
+           flex: 1;
+           flex-shrink: 1;
+        }
+    }
+
+    .description {
+        width: 40%;
+        align-self: center;
+        background-color: $secondary-light-color;
+        margin: .8em;
+
+        h2, p {
+            padding: 20px;
+        }
+        p {
+            text-align: justify;
+        }
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    #css-frameworks {
+        .first-column, .second-column {
+            width: 26%;
+        }  
+    }
+    .description {
+        width: 48%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #css-frameworks {
+        .detail {
+            height: 40%;
+            position: absolute;
+            top: 10%;
+            left: 0;
+        }
+        flex-wrap: wrap;
+        .first-column, .second-column {
+            width: 50%;
+        }  
+    }
+    .description {
+        width: 100%!important;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    #css-frameworks {
+        .detail {
+            width: 37%;
+            height: 50%;
+            background-color: $secondary-light-color;
+            position: absolute;
+            top: 10%;
+            left: 0;
+        }
+
+        flex-wrap: wrap;
+        .first-column, .second-column {
+            width: 80%;
+            margin: auto;
+
+            .hidden-div {
+                display: none;
+            }
+        }  
+    }
+    .description {
+       width: 100%!important;
+       
+    }
+}

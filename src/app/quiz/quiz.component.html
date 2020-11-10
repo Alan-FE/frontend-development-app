@@ -1,0 +1,46 @@
+<div id="quiz">
+    <div class="quiz-container">
+        <div class="welcome-page" *ngIf="!hide">
+            <h2>Welcome to Frontend development quiz</h2>
+            <p>This quiz contains 10 questions. All questions are from this site. Start the Quiz.<br>
+                Good luck!</p>
+            <button id="start-button" (click)="startQuiz()">Start the quiz</button>
+        </div>
+
+        <div class="question-container" *ngIf="hide && !show && !checkResults">
+            <div class="question">
+                <h3>Question {{ incrementId + 1 }}/{{ numberOfQuestion }}</h3>
+                <h3>{{ question }}</h3>
+            </div>
+            <div class="answers" *ngFor="let answer of answers; let i = index">
+                <button [ngClass]="{ 'btn': true, 'answer': i == yourAnswer }"
+                    (click)="clickedAnswer(i)">{{answer.answer}}</button>
+            </div>
+            <button class="next-button" (click)="nextQuestion()">{{ !end ? 'Next question': 'Finish a quiz' }}</button>
+        </div>
+
+        <div class="question-container" *ngIf="hide && !show && checkResults">
+            <div class="question">
+                <h3>Question {{ incrementId + 1 }}/{{ numberOfQuestion }}</h3>
+                <h3>{{ question }}</h3>
+            </div>
+            <div class="answers" *ngFor="let answer of answers; let i = index">
+                <button class="btn"
+                    [ngClass]="{ 'btn': true, 'correct': answer.correct && i == wrong || answer.correct,
+                                                     'wrong': i == wrong && !answer.correct}">{{answer.answer}}</button><br>
+                <span *ngIf="answer.correct && i == wrong">Your answer is correct</span>
+                <span *ngIf="answer.correct && wrong == -1">You didn't answer on this question</span>
+                <span *ngIf="i == wrong && !answer.correct"><i class="fas fa-times"></i> Your answer is wrong</span>
+            </div>
+            <button *ngIf="!end" class="next-button" (click)="nextQuestion()">Next question</button>
+            <button class="exit" (click)="exit()">Exit</button>
+        </div>
+
+        <div class="quiz-answers" [hidden]="!show">
+            <h2>Your result is {{ score }} of {{ numberOfQuestion }} <i class="fas fa-trophy"></i></h2>
+            <button class="check" (click)="showAnswers()">Check your answers</button>
+            <button class="exit" (click)="exit()">Exit from quiz</button>
+        </div>
+
+    </div>
+</div>

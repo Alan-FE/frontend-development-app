@@ -1,1 +1,52 @@
 /* You can add global styles to this file, and also import other style files */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0 auto;
+
+    #frontend, #css-frameworks, #js-frameworks, #skills, #text-editors, #quiz {
+        padding-top: 64px!important;
+    }
+
+    font: {
+        family: 'Lato', sans-serif;
+        size: 1em;
+    }
+
+    p {
+        font-size: 1.1em;
+    }
+
+    h1 {
+        font-size: 2.2em;
+    }
+
+    h2 {
+        font-size: 1.7em;
+    }
+
+    h3 {
+        font-size: 1.4em;
+    }
+
+}
+
+@media screen and (max-width: 1024px) {
+    body {
+        font-size: 0.9em;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        font-size: 0.8em;
+    }
+}
+
+@media screen and (max-width: 414px) {
+    body {
+        font-size: 0.7em;
+    }
+}

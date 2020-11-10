@@ -1,0 +1,184 @@
+@import '../../colors';
+
+%stylization-shared-btn {
+    border: none;
+    text-decoration: none;
+    padding: 1em 2em;
+    cursor: pointer;
+    font-size: 1em;
+    border-radius: 5px;
+    background-color: $secondary-light-color;
+    color: $text-light-color;
+    font-weight: bold;
+    outline: none;
+
+        &:hover {
+            background-color: #ba3a76;
+        }
+}
+
+#quiz {
+    background-color: $tertiary-light-color;
+    color: $text-light-color;
+    height: 600px;
+    display: flex;
+    align-items: center;
+    .quiz-container {
+        text-align: center;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+
+        .welcome-page {
+            padding: 1em;
+            #start-button {
+                @extend %stylization-shared-btn;
+            }
+        }
+
+        .next-button {
+            @extend %stylization-shared-btn;
+            margin: 10px;
+        }
+
+        .question-container {
+            width: 80%;
+            .question {
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                height: 6em;
+                h3 {
+                    margin: 2px;
+                }
+            }
+
+            .answers {
+                position: relative;
+                .btn {
+                    width: 70%;
+                    border: none;
+                    text-decoration: none;
+                    padding: .8em 1.8em;
+                    margin: 3px;
+                    border-radius: 5px;
+                    font-size: 1em;
+                    font-weight: bold;
+                    background-color: $tertiary-light-color;
+                    color: $text-light-color;
+                    cursor: pointer;
+                    outline: none;
+
+                    &:hover {
+                        background-color: $secondary-light-color;
+                    }
+                    &:active {
+                        background-color: deepskyblue;
+                    }
+                }
+
+                .answer {
+                    background-color: deepskyblue;
+                }
+
+                .correct {
+                    background-color:limegreen;
+                }
+
+                .wrong {
+                    background-color: crimson;
+                }
+                
+            }
+
+            .exit {
+                @extend %stylization-shared-btn;
+                background-color: deepskyblue;
+                &:hover {
+                    background-color: #00aee8;
+                }
+            }
+           
+        }
+
+        .quiz-answers {
+            height: 34%;
+
+            .check {
+                @extend %stylization-shared-btn;
+            }
+
+            .exit {
+                @extend %stylization-shared-btn;
+                background-color: deepskyblue;
+
+                &:hover {
+                    background-color: #00aee8;
+                }
+            }
+
+            .check, .exit {
+                margin: 5px;
+            }
+        }
+    }
+
+    .quiz-container, .question-container, .quiz-answers {
+        background-color:  $primary-dark-color;
+        width: 60%;
+        height: 80%;
+        margin: 0 auto;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    #quiz {
+        .quiz-container {
+            .question-container {
+            }
+
+            .answer {
+                .btn {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #quiz {
+        .quiz-container {
+            .question-container {
+                width: 100%;
+            }
+
+            .answer {
+                .btn {
+                    width: 90%;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 576px) {
+    #quiz {
+        height: 550px;
+        .quiz-container {
+            .question-container {
+                width: 100%;
+                .question {
+                    height: 7.8em;
+                }
+            }
+
+            .answer {
+                .btn {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,147 @@
+@import '../../colors';
+
+#frontend {
+    background-color: $tertiary-light-color;
+    padding: 10px;
+    text-align: center;
+
+    .typing-text {
+        display: inline-block;
+
+        h1 {
+            display: inline-block;
+            overflow: hidden;
+            color: $text-light-color;
+            letter-spacing: 3px;
+            padding-right: 2px;
+            animation: typing 2s steps(21, end), blinking-cursor .75s step-end infinite;
+            white-space: nowrap;
+            border-right: 4px solid $text-light-color;
+
+        }
+    }
+
+    img {
+        display: block;
+        margin: auto;
+        width: 70%;
+    }
+
+    @keyframes typing {
+        from { width: 0%; }
+        to { width: 100%; }
+    }
+
+    @keyframes blinking-cursor {
+        from, to { 
+            border-color: transparent 
+        }
+        50% { 
+            border-color: $text-light-color;
+
+        }
+    }
+}
+
+.main-languages {
+    text-align: center;
+    width: 80%;
+    margin: 20px auto;
+    position: relative;
+
+    .style-detail {
+        position: absolute;
+        top: 50%;
+        width: 100%;
+        height: 25%;
+        background-color: $secondary-light-color;
+    }
+
+    .languages {
+        position: relative;
+        display: inline-block;
+        width: 20%;
+        margin: 1%;
+        padding: 0.8em  0.8em 1.2em;
+        border: 1px solid $primary-dark-color;
+        z-index: 1;
+        background-color: white;
+        box-shadow: 4px 4px 7px black;
+        transition: transform ease-out .2s;
+        will-change: contents;
+        transform: translateZ(0);
+
+        img {
+            width: 50%;
+        }
+
+        h3 {
+            margin: .3em;
+        }
+        
+        p {
+            text-align: justify;
+        }
+
+        .btn-style {
+            background-color: $primary-dark-color;
+            padding: 8px 20px;
+            text-decoration:none;
+            font-weight:bold;
+            border-radius:5px;
+            color: $text-light-color;
+
+            &:hover {
+                background-color: $secondary-light-color;
+            }
+        }
+
+        &:hover {
+            transform: scale(1.1, 1.1);
+            cursor: default;
+        }
+
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .main-languages {
+        width: 90%;
+        .languages {
+            width: 25%;
+        }
+    }
+    
+}
+
+@media screen and (max-width: 768px) {
+    .main-languages {
+        width: 100%;
+
+        .style-detail {
+            position: absolute;
+            top: 40%;
+            width: 100%;
+            height: 25%;
+            background-color: $secondary-light-color;
+        }
+
+        .languages {
+            width: 42%;
+            margin: 1.3%;
+            &:hover {
+                transform: scale(1.05, 1.05);
+                cursor: default;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .main-languages {
+        width: 100%;
+        .languages {
+            width: 60%;
+        }
+    }
+}
