@@ -145,3 +145,14 @@
         }
     }
 }
+
+@media screen and (max-width: 360px) {
+    #frontend {
+        .typing-text {
+            h1 {
+                word-break: break-all;
+                white-space: normal;
+            }
+        }
+    }
+}

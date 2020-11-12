@@ -27,8 +27,8 @@
         <li [ngClass]="show ? 'list': ''">
             <a routerLinkActive="active" routerLink="/quiz" class="links" (click)="clickScroll('quiz')">Quiz</a>
         </li>
-        <i [ngClass]="show ? 'hide' : ''" class="fas fa-bars icon-hamburger" (click)="showMenu()"></i>
-        <i [ngClass]="!show ? 'hide' : ''" class="fas fa-times icon-close" (click)="closeMenu()"></i>
+        <i [ngClass]="!show ? 'visible' : ''" class="fas fa-bars icon-hamburger" (click)="showMenu()"></i>
+        <i [ngClass]="show ? 'visible' : ''" class="fas fa-times icon-close" (click)="closeMenu()"></i>
     </ul>
 
 </nav>

@@ -88,6 +88,7 @@
 
 @media screen and (max-width: 576px) {
     #css-frameworks {
+        padding: 0px;
         .detail {
             width: 37%;
             height: 50%;
@@ -99,8 +100,12 @@
 
         flex-wrap: wrap;
         .first-column, .second-column {
-            width: 80%;
+            width: 70%;
             margin: auto;
+
+            .cards {
+                padding: .8em;
+            }
 
             .hidden-div {
                 display: none;
@@ -108,7 +113,6 @@
         }  
     }
     .description {
-       width: 100%!important;
-       
+       width: 100%!important;       
     }
 }
